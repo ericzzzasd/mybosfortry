@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/easyui/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/easyui/locale/easyui-lang-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../js/easyui/themes/default/easyui.css"/>
+		<link rel="stylesheet" type="text/css" href="../../js/easyui/themes/icon.css"/>
+		<script src="../../js/ztree/jquery.ztree.all-3.5.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../js/ztree/zTreeStyle.css"/>
+		<title>test</title>
+		<script type="text/javascript">
+			function openTabs(event, treeId, treeNode){
+				var content = '<div style="width:100%;height:500px;overflow:hidden;">'
+								+ '<iframe src="'
+								+ treeNode.to
+								+ '" scrolling="auto" style="width:100%;height:100%;border:0;" ></iframe></div>';
+					
+					if(treeNode.to!=undefined && treeNode.to!=""){
+						if($("#t").tabs('exists',treeNode.name)){
+							
+							$("#t").tabs('select',treeNode.name);
+						}else{
+							$("#t").tabs('add',{
+								title:treeNode.name,
+								content:content,
+								closable:true
+							});
+						}
+					}
+			}
+			function menuHandler(item){
+				
+				if(item.name=="closeCurrent"){
+					$("#t").tabs('close',currenTitle);
+				}else if(item.name=="closeOthers"){
+					var x=$("#t").tabs('tabs');
+					$(x).each(function(){
+						if($(this).panel('options').title != '消息中心' && $(this).panel('options').title != currenTitle){
+							$("#t").tabs('close',$(this).panel('options').title);
+						}
+					});
+				}else if(item.name=="closeAll"){
+					var x=$("#t").tabs('tabs');
+					$(x).each(function(){
+						$("#t").tabs('close',$(this).panel('options').title);
+					})
+				}
+			}
+			var currenTitle;
+			$(function(){
+				
+				
+					/*$.messager.alert('不猜','就猜','info');
+					$.messager.confirm('看看','猜猜',function(result){
+						if(result){
+							alert("猜对了");
+						}
+					})*/
+				
+				var setting = {
+					data: {
+						simpleData: {
+							enable: true // 支持简单json数据格式
+						}
+					},
+					callback: {
+						onClick: openTabs
+					}
+				};
+				
+				var treeNodes=[
+					{id:1,pId:0,name:"父节点1"},
+					{id:2,pId:0,name:"父节点2"},
+					{id:11,pId:1,name:"子节点1"},
+					{id:12,pId:1,name:"子节点2"},
+					{id:21,pId:2,name:"百度",to:"http://www.baidu.com"},
+					{id:22,pId:2,name:"网易",to:"http://www.163.com"}
+				];
+				$.fn.zTree.init($("#tree1"),setting,treeNodes);
+				$("#t").tabs({
+					onContextMenu: function(e, title,index){
+						// 阻止默认菜单显示
+						e.preventDefault();
+						
+						currenTitle=title
+						// 显示自定义右键菜单
+						$("#m").menu('show',{
+							
+							left : e.pageX,
+							top : e.pageY
+						});
+					}
+				})
+				
+				
+			})
+			
+		</script>
+	</head>
+	<body class="easyui-layout">
+		
+		<div id="" data-options="region:'north',title:'你猜'" style="height: 100px;">asd</div>
+		<div id="" data-options="region:'south',title:'你猜我猜不猜'" style="height: 100px;" >asd</div>
+		<div id="" data-options="region:'center'"  style="width: 100px;" >
+			<div id="t" class="easyui-tabs">
+				
+			</div>
+		</div>
+		<div id="" data-options="region:'west',title:'不猜'"  style="width:200px;">
+			<div id="1" class="easyui-accordion" data-options="fit:true">
+				<div id="" style="width: 300px;" data-options="title:'基础菜单'">
+					<ul id="tree1" class="ztree"></ul>
+				</div>
+				<div id="" style="width: 300px;" data-options="title:'基础菜单'">面板二</div>
+			</div>
+		</div>
+		<div id="" data-options="region:'east',title:'那猜'" style="width: 100px;" >
+			
+		</div>
+		<div id="m" class="easyui-menu" data-options="onClick:menuHandler" style="width:120px;">
+				<div data-options="name:'closeCurrent'">
+					关闭当前
+				</div>
+				<div data-options="name:'closeOthers'">
+					关闭其他
+				</div>
+				<div data-options="name:'closeAll'">
+					关闭所有
+				</div>
+			</div>
+	</body>
+</html>
+ 
