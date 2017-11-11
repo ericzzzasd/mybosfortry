@@ -49,6 +49,20 @@
 			})
 			
 			function doAdd(){
+				$("#form1").form("load",{
+					id:"",
+					courierNum:"",
+					name:"",
+					telephone:"",
+					checkPwd:"",
+					pda:"",
+					vehicleType:"",
+					vehicleNum:"",
+					company:"",
+					"standard.id":"",
+					type:""
+					
+				});
 				
 				$("#cbox").combobox({
 					valueField:"id",
@@ -64,12 +78,30 @@
 					$.messager.alert('错误','只能选择一行!','warning');
 				}else{
 					var row=rows[0];
-					$("#form1").form("load",row);
+					
+					
+					
 					$("#cbox").combobox({
 						valueField:"id",
 						textField:"name",
 						url:"../../showAllStandard"
+						
 					});
+					
+					$("#form1").form("load",{
+						id:row.id,
+						courierNum:row.courierNum,
+						name:row.name,
+						telephone:row.telephone,
+						checkPwd:row.checkPwd,
+						pda:row.pda,
+						vehicleType:row.vehicleType,
+						vehicleNum:row.vehicleNum,
+						company:row.company,
+						"standard.id":row.standard.name,
+						type:row.type
+						
+				});
 					$('#addWindow').window("open");
 				}
 			}
@@ -77,7 +109,6 @@
 			function doDelete(){
 				
 				var rows=$("#grid").datagrid('getSelections');
-				
 				if(rows.length==0){
 					$.messager.alert("错误","请至少选择一行","warning");
 				}else{
@@ -297,6 +328,7 @@
 							</td>
 							<td>取派标准</td>
 							<td>
+							
 								<input type="text" id="cbox" name="standard.id" class="easyui-combobox" required="true"/>
 							</td>
 						</tr>
