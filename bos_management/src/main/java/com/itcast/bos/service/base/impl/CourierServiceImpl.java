@@ -1,6 +1,14 @@
 package com.itcast.bos.service.base.impl;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -44,6 +52,22 @@ public class CourierServiceImpl implements CourierService{
 		}
 		
 		
+	}
+
+	@Override
+	public List<Courier> findNoConnectCourier() {
+	
+		Specification<Courier> specification=new Specification<Courier>() {
+			
+			@Override
+			public Predicate toPredicate(Root<Courier> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+				Predicate predicate = cb.isEmpty(root.get("fixedAreas").as(Set.class));
+				return predicate;
+			}
+		};
+		
+		List<Courier> findAll = courierDao.findAll(specification);
+		return findAll;
 	}
 
 }

@@ -26,7 +26,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Controller;
 
-import com.itcast.bos.action.base.common.BaseAction;
+import com.itcast.bos.action.common.BaseAction;
 import com.itcast.bos.domain.base.Courier;
 import com.itcast.bos.domain.base.Standard;
 import com.itcast.bos.service.base.CourierService;
@@ -119,4 +119,13 @@ public class CourierAction extends BaseAction<Courier>{
 		courierService.delCourier(list);
 		return "success";
 	}
+	
+	@Action(value="findNoConnectCourier",results={@Result(name="success",type="json")})
+	public String findNoConnectCourier(){
+		List<Courier>list=courierService.findNoConnectCourier();
+		ServletActionContext.getContext().getValueStack().push(list);
+		return "success";
+ 	}
+	
+	
 }
