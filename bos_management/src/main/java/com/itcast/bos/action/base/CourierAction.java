@@ -119,4 +119,13 @@ public class CourierAction extends BaseAction<Courier>{
 		courierService.delCourier(list);
 		return "success";
 	}
+	
+	@Action(value="findNoConnectCourier",results={@Result(name="success",type="json")})
+	public String findNoConnectCourier(){
+		List<Courier>list=courierService.findNoConnectCourier();
+		ServletActionContext.getContext().getValueStack().push(list);
+		return "success";
+ 	}
+	
+	
 }

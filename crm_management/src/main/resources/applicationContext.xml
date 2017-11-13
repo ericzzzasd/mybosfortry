@@ -15,5 +15,8 @@
 		http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
 		http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd ">
 		
+		<context:component-scan base-package="com.itcast"></context:component-scan>
 		
-		</beans>
+		<import resource="classpath:applicationContext-dataSource.xml"/>
+		<import resource="classpath:applicationContext-webService.xml"/>	
+</beans>

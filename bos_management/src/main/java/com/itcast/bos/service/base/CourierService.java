@@ -18,4 +18,6 @@ public interface CourierService {
 
 	void delCourier(List<Integer> list);
 
+	List<Courier> findNoConnectCourier();
+
 }

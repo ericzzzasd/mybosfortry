@@ -12,4 +12,6 @@ public interface FixedAreaService {
 
 	Page<FixedArea> showPageFixedArea(Specification<FixedArea> specification, Pageable pagea);
 
+	void FiexedAreaConnectCourierTakeTime(String id, String courierId, String takeTimeId);
+
 }

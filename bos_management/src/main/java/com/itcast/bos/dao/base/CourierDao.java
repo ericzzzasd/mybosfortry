@@ -13,4 +13,5 @@ public interface CourierDao extends JpaRepository<Courier,Integer>,JpaSpecificat
 	@Modifying
 	public void delCourier(Integer integer);
 
+
 }
