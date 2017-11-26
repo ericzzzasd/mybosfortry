@@ -4,7 +4,10 @@ import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+<<<<<<< HEAD
 import javax.ws.rs.POST;
+=======
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -33,6 +36,7 @@ public interface CustomerService {
 	@Consumes({"application/xml","application/json"})
 	public void customerConnectFixedArea(@QueryParam("fixedArea_Id") String  fixedArea_Id,
 			@QueryParam("customer_Ids")	String customer_Ids);
+<<<<<<< HEAD
 	
 	@POST
 	@Path("/saveCustomer")
@@ -59,4 +63,6 @@ public interface CustomerService {
 	@Produces({"application/xml","application/json"})
 	@Consumes({"application/xml","application/json"})
 	public Customer findCustomerByAddress(@QueryParam("address")String address);
+=======
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785
 }

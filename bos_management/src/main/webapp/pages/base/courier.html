@@ -67,7 +67,7 @@
 				$("#cbox").combobox({
 					valueField:"id",
 					textField:"name",
-					url:"../../showAllStandard"
+					url:"../../showAllStandard.action"
 				});
 				$('#addWindow').window("open");
 			}
@@ -84,7 +84,7 @@
 					$("#cbox").combobox({
 						valueField:"id",
 						textField:"name",
-						url:"../../showAllStandard"
+						url:"../../showAllStandard.action"
 						
 					});
 					
@@ -242,7 +242,7 @@
 					pageList: [30,50,100],
 					pagination : true,
 					toolbar : toolbar,
-					url : "../../showPageSearchCourier",
+					url : "../../showPageSearchCourier.action",
 					idField : 'id',
 					columns : columns,
 					onDblClickRow : doDblClickRow
@@ -279,7 +279,7 @@
 			</div>
 
 			<div region="center" style="overflow:auto;padding:5px;" border="false">
-				<form id="form1" method="post" action="../../saveCourier">
+				<form id="form1" method="post" action="../../saveCourier.action">
 					<table class="table-edit" width="80%" align="center">
 						<tr class="title">
 							<td colspan="2">收派员信息</td>

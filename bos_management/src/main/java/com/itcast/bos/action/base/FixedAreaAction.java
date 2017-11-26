@@ -78,7 +78,11 @@ public class FixedAreaAction extends BaseAction<FixedArea>{
 	
 	@Action(value="findNoConnectCustomer",results={@Result(type="json",name="success")})
 	public String findNoConnectCustomer(){
+<<<<<<< HEAD
 		Collection<? extends Customer> collection = WebClient.create(Constant.CRM_MANAGEMENT+"/noConnectCustomer").accept(MediaType.APPLICATION_JSON).getCollection(Customer.class);
+=======
+		Collection<? extends Customer> collection = WebClient.create("http://localhost:9002/crm_management/services/customerService/noConnectCustomer").accept(MediaType.APPLICATION_JSON).getCollection(Customer.class);
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785
 		ServletActionContext.getContext().getValueStack().push(collection);
 		return "success";
 		
@@ -97,7 +101,11 @@ public class FixedAreaAction extends BaseAction<FixedArea>{
 	@Action(value="findConnectCustomer",results={@Result(type="json",name="success")})
 	public String findConnectCustomer(){
 		System.out.println(fixedArea_Id);
+<<<<<<< HEAD
 		Collection<? extends Customer> collection = WebClient.create(Constant.CRM_MANAGEMENT+"/connectCustomer/"+fixedArea_Id)
+=======
+		Collection<? extends Customer> collection = WebClient.create("http://localhost:9002/crm_management/services/customerService/connectCustomer/"+fixedArea_Id)
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785
 			.type(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)
 			.getCollection(Customer.class);
 		System.out.println(collection);
@@ -128,7 +136,11 @@ public class FixedAreaAction extends BaseAction<FixedArea>{
 			 }
 		}
 		
+<<<<<<< HEAD
 		String  s=Constant.CRM_MANAGEMENT+"/connectFixedArea?fixedArea_Id="+model.getId()+"&customer_Ids="+cs;
+=======
+		String  s="http://localhost:9002/crm_management/services/customerService/connectFixedArea?fixedArea_Id="+model.getId()+"&customer_Ids="+cs;
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785
 		System.out.println(s);
 		WebClient.create(s).put(null);
 		

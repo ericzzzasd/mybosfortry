@@ -14,6 +14,7 @@
 		<script  type="text/javascript" src="js/angular.min.js"></script>
 		<script  type="text/javascript" src="js/self/effect.js"></script>
 		<script  type="text/javascript" src="js/self/validate.js"></script>
+<<<<<<< HEAD
 		<script type="text/javascript">
 			$(function(){
 				
@@ -24,6 +25,9 @@
 			})
 			
 		</script>
+=======
+
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785
 		<!--[if IE]>
     <script  type="text/javascript" src="js/html5.js"></script>
     <script  type="text/javascript" src="js/respond.min.js"></script>
@@ -49,7 +53,11 @@
 			<div class="container">
 				<div class="col-md-4 col-md-offset-7 loginbox">
 					<h4>用户登录</h4>
+<<<<<<< HEAD
 					<form class="form-horizontal" id="userForm" name="userForm" method="post" action="./login.action" ng-submit="submitForm(userForm.$valid)" novalidate>
+=======
+					<form class="form-horizontal" name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785
 
 						<div class="form-group">
 							<label  class="col-sm-3 control-label">登录方式</label>
@@ -65,7 +73,11 @@
 						<div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
 							<label for="inputaccount" class="col-sm-3 control-label">账号</label>
 							<div class="col-sm-8">
+<<<<<<< HEAD
 							<input  type="text" name="telephone" class="form-control" ng-model="user.name" required placeholder="请输入账号">
+=======
+							<input  type="text" name="name" class="form-control" ng-model="user.name" required placeholder="请输入账号">
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785
 								<p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">用户名不可为空.</p>
 							</div>
 						</div>
@@ -134,7 +146,11 @@
                        
                        
                         <div class="col-md-offset-3 col-md-8">
+<<<<<<< HEAD
 							<a href="" class="btn btn-danger" id="lb" >登录</a>
+=======
+							<a href="index.html#/myhome" class="btn btn-danger" >登录</a>
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785
 							
 						</div>
 						<p class="text-right clearfix">还不是我们的会员？<b><a href="signup.html">立即注册</a></b></p>

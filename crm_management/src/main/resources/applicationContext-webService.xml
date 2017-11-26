@@ -16,7 +16,11 @@
 		http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd ">
 		<jaxrs:server id="customerService"  address="/customerService">
 			<jaxrs:serviceBeans>
+<<<<<<< HEAD:crm_management/src/main/resources/applicationContext-webService.xml
 				<bean class="com.itcast.crm.service.impl.CustomerServiceImpl"></bean>
+=======
+				<bean class="com.itcast.crm.service.CustomerServiceImpl"></bean>
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785:crm_management/src/main/resources/applicationContext-webService.xml
 			</jaxrs:serviceBeans>
 			<jaxrs:inInterceptors>
 				<bean class="org.apache.cxf.interceptor.LoggingInInterceptor"></bean>

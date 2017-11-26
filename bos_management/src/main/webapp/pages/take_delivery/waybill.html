@@ -11,7 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="../../js/easyui/themes/icon.css">
 		<link rel="stylesheet" type="text/css" href="../../js/easyui/ext/portal.css">
 		<link rel="stylesheet" type="text/css" href="../../css/default.css">
-		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
 		<script type="text/javascript" src="../../js/easyui/jquery.easyui.min.js"></script>
 		<script type="text/javascript" src="../../js/easyui/ext/jquery.portal.js"></script>
 		<script type="text/javascript" src="../../js/easyui/ext/jquery.cookie.js"></script>
@@ -29,6 +29,28 @@
 						$('#orderForm').submit();
 					}
 				});
+				$("#orderfind").blur(function(){
+					var value=$("#orderfind").val();
+					$.post("../../showOrder.action",{orderNum:value},function(data){
+						
+						
+						$("#form1").form('load',data.order);
+						
+						 $("#order.courier.company").val(data.order.courier.company);
+						 $("#order.courier.company").val(data.order.courier.name);
+					})
+				})
+				$("#wayBillNum").blur(function(){
+					var value=$("#wayBillNum").val();
+					$.post("../../showWayBill.action",{wayBillNum:value},function(data){
+						
+						$("#form1").form('load',data.waybill);
+						
+					})
+				})
+				$("#save").click(function(){
+					$("#form1").submit();
+				})
 			});
 		</script>
 	</head>
@@ -40,19 +62,22 @@
 			<a id="no" icon="icon-no" href="#" class="easyui-linkbutton" plain="true">取消</a>
 		</div>
 		<div style="width:95%;margin:10px auto">
+			<form id="form1" action="../../saveWayBill.action" method="post">
 			<div class="table-top">
-				<table class="table-edit" width="95%">
+				<table class="table-edit" width="95%" >
 					<tr class="title">
 						<td colspan="6">单号信息</td>
 					</tr>
 					<tr>
 						<td>订单号</td>
 						<td>
+							
 							<input type="hidden" name="order.id" id="orderId" />
-							<input type="text" name="order.orderNum" />
+							<input type="text" name="order.orderNum" id="orderfind" />
 						</td>
 						<td>运单号</td>
 						<td>
+						<input type="hidden" name="id"  id="id"/>
 							<input type="text" name="wayBillNum" id="wayBillNum"/>
 						</td>
 					</tr>
@@ -78,9 +103,9 @@
 					</tr>
 					<tr>
 						<td>受理单位</td>
-						<td><input type="text" name="order.courier.company" required="true" /></td>
+						<td><input type="text" name="order.courier.company" id="order.courier.company" required="true" /></td>
 						<td>快递员</td>
-						<td><input type="text" name="order.courier.name" required="true" /></td>
+						<td><input type="text" name="order.courier.name" id="order.courier.name" required="true" /></td>
 					</tr>
 				</table>
 			</div>
@@ -92,7 +117,7 @@
 						</tr>
 						<tr>
 							<td>寄件人</td>
-							<td><input type="text" name="sendName" required="true" /></td>
+							<td><input type="text" id="sendName" name="sendName" required="true" /></td>
 							<td>地址</td>
 							<td><input type="text" name="sendAddress" required="true" /></td>
 						</tr>
@@ -265,7 +290,8 @@
 					</table>
 				</div>
 			</div>
-			<div class="clearfix"></div>		
+			<div class="clearfix"></div>
+			</form>	
 		</div>
 	</body>
 

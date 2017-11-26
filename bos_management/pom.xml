@@ -16,10 +16,13 @@
   		<artifactId>crm_domain</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
+<<<<<<< HEAD
   <dependency>
   	<groupId>com.itcast.maven</groupId>
   	<artifactId>bos_main</artifactId>
   	<version>0.0.1-SNAPSHOT</version>
   </dependency>
+=======
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785
   </dependencies>
 </project>

@@ -107,7 +107,7 @@ public class AreaServiceImpl implements AreaService{
 		areaDao.save(list);
 		
 	}
-
+ 
 
 	@Override
 	public Page<Area> showAllPageArea(Pageable pagea, Specification<Area> specification) {

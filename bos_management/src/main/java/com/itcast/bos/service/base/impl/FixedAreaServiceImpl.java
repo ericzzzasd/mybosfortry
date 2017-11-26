@@ -10,7 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
 import com.itcast.bos.dao.base.CourierDao;
 import com.itcast.bos.dao.base.FixedAreaDao;
 import com.itcast.bos.dao.base.TakeTimeDao;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785
 import com.itcast.bos.domain.base.Courier;
 import com.itcast.bos.domain.base.FixedArea;
 import com.itcast.bos.domain.base.TakeTime;

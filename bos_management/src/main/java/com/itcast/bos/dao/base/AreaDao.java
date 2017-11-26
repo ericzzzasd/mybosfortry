@@ -7,4 +7,6 @@ import com.itcast.bos.domain.base.Area;
 
 public interface AreaDao extends JpaRepository<Area, String>,JpaSpecificationExecutor<Area>{
 
+	Area findByProvinceAndCityAndDistrict(String province, String city, String district);
+
 }

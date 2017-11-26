@@ -18,8 +18,12 @@
 
 	<!-- 加载properties文件 -->
 	<context:property-placeholder location="classpath:config.properties" />
+<<<<<<< HEAD:bos_fore/src/main/resources/applicationContext.xml
 	<!--  activemq生产者配置-->
 	<import resource="classpath:applicationContext-activemq-producer.xml"/>
 	<!--  redis配置-->
 	<import resource="classpath:applicationContext-redis.xml"/>
+=======
+	
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785:bos_fore/src/main/resources/applicationContext.xml
 </beans>

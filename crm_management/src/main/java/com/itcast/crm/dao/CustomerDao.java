@@ -24,6 +24,7 @@ public interface CustomerDao extends JpaRepository<Customer,String> {
 	@Query(value="update Customer set fixedAreaId=null where fixedAreaId=?")
 	@Modifying
 	public void clearCustomer(String fixedArea_Id);
+<<<<<<< HEAD
 	
 	public Customer findByTelephone(String telephone);
 	
@@ -35,4 +36,6 @@ public interface CustomerDao extends JpaRepository<Customer,String> {
 	
 	public Customer findByAddress(String address);
 	
+=======
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785
 }

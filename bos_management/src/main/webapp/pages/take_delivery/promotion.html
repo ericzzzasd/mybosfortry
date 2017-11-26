@@ -31,7 +31,10 @@
 						}, {
 							field: 'titleImg',
 							title: '宣传图片',
-							width: 200
+							width: 200,
+							formatter: function(value,row,index){
+						        return "<img src="+row.titleImg+" width='100px' height='100px'/>";	
+						     }  
 						},{
 							field: 'startDate',
 							title: '发布时间',
@@ -58,6 +61,7 @@
 							width: 100
 						}]
 					],
+					url : "../../findPromotionPage.action",
 					pagination: true,
 					toolbar: [{
 							id: 'searchBtn',

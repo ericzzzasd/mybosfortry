@@ -5,7 +5,11 @@
 		<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<title>速运快递</title>
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785
 		<link rel="stylesheet" type="text/css" href="css/styleindex.css">
 		<link rel="stylesheet" type="text/css" href="css/public.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
@@ -16,8 +20,11 @@
 		<script src="js/self/effect.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/angular.min.js"></script>
 		<script type="text/javascript" src="js/angular-route.min.js"></script>
+<<<<<<< HEAD
 		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=NLHoHX7mfEG2kKc5GUxzHT876u208Rjb"></script>
 		
+=======
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785
 		
 		<!--[if IE]>
     <script src="js/html5.js"  type="text/javascript"></script>
@@ -63,7 +70,10 @@
 									<li>
 										<a href="#/myhome" data-placement="bottom" title="我的主页">我的主页</a>
 									</li>
+<<<<<<< HEAD
 									
+=======
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785
 									<li>
 										<a href="login.html">登录</a>
 									</li>
@@ -170,10 +180,15 @@
 					templateUrl: 'myhome.html'
 				}).when("/promotion", {
 					templateUrl: 'promotion.html'
+<<<<<<< HEAD
 				}).when("/promotion_detail/:id", {
 					templateUrl: function($routeParams){
 						return "./showPromotion_Detail.action?id="+$routeParams.id
 					}
+=======
+				}).when("/promotion_detail", {
+					templateUrl: 'promotion_detail.html'
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785
 				}).otherwise({
 					redirectTo: '/'
 				})
@@ -186,6 +201,7 @@
 			// 在线下单控制器
 			bosfore_app.controller("orderCtrl",["$scope",function($scope){
 			}]);
+<<<<<<< HEAD
 				
 			bosfore_app.controller("ctrlRead",["$scope","$http",function($scope,$http){
 					$scope.currentPage=1;
@@ -266,4 +282,9 @@
 		</script>
 	</body>
 
+=======
+		</script>
+	</body>
+	<script src="js/self/page.js"></script>
+>>>>>>> 6645a5796d582c6708852a194116047f00e92785
 </html>

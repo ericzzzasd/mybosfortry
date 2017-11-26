@@ -24,7 +24,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Controller;
 
-import com.itcast.bos.action.base.common.BaseAction;
+import com.itcast.bos.action.common.BaseAction;
 import com.itcast.bos.domain.base.Area;
 import com.itcast.bos.service.base.AreaService;
 import com.opensymphony.xwork2.ModelDriven;

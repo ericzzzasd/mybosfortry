@@ -21,7 +21,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
-import com.itcast.bos.action.base.common.BaseAction;
+import com.itcast.bos.action.common.BaseAction;
 import com.itcast.bos.domain.base.Area;
 import com.itcast.bos.domain.base.Standard;
 import com.itcast.bos.service.base.StandardService;
