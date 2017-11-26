@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>test</title>
+		<script src="../js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var myapp=angular.module("myapp",[]);
+			myapp.controller("myc",["$scope",function($scope){
+				$scope.products=[
+					{
+						id:1,
+						name:"冰箱",
+						price:1234
+					},{
+						id:2,
+						name:"空调",
+						price:456
+					}
+				]
+			}])
+		</script>	
+	</head>
+	<body>
+		<div ng-app="myapp" ng-controller="myc">
+			<table border="1px" >
+				<tr>
+					<th>商品编号</th>
+					<th>商品名称</th>
+					<th>商品价格</th>
+				</tr>
+				<tr ng-repeat="product in products">
+					<td>{{product.id}}</td>
+					<td>{{product.name}}</td>
+					<td>{{product.price}}</td>
+				</tr>
+			</table>		
+		</div>
+	</body>
+</html>

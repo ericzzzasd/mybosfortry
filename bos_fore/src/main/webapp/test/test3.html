@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>test</title>
+		<script src="../js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var myapp=angular.module("myapp",[]);
+			myapp.controller("myc",["$scope",function($scope){
+				$scope.clear=function(){
+					alert("a");
+				}
+			}])
+		</script>
+	</head>
+	<body>
+		<div ng-app="myapp" ng-controller="myc">
+			<div >
+				<input type="text" name="c" id="c" ng-model="cs" />
+			</div>
+			<div >
+				<button ng-click="clear()" >test</button>
+			</div>
+		</div>
+	</body>
+</html>

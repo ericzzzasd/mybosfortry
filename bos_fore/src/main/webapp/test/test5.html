@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>test</title>
+		<script src="../js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var myapp = angular.module("myapp",["ngRoute"]);
+			myapp.config(["$routeProvider",function($routeProvider){
+				$routeProvider.when("/java",{
+					templateUrl:'java.html'	}).when("/Android",{
+					templateUrl:'Android.html'}).when("/C",{
+					templateUrl:'C.html'}).otherwise({redirectTo:'/t'});
+				}]);
+		</script>
+	</head>
+	<body ng-app="myapp">
+		<div>
+			<h1>这是头部分</h1>
+			<a href="#/t">主页</a>
+			<a href="#/java">java</a>
+			<a href="#/Android">Android</a>
+			<a href="#/C">C</a>	
+		</div>
+		<div ng-view>
+			
+		</div>
+		<div >
+			<h1>这是尾巴</h1>
+		</div>
+	</body>
+</html>
